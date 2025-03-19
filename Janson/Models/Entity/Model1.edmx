@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JonsonDbMvcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AboutTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="icerik" Type="nvarchar" MaxLength="400" />
+          <Property Name="icerik2" Type="nvarchar" MaxLength="400" />
+          <Property Name="photo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AdminTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kullanıcı" Type="nchar" MaxLength="30" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ExperienceTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="baslik" Type="nchar" MaxLength="20" />
+          <Property Name="Aralık" Type="nvarchar" MaxLength="50" />
+          <Property Name="Link" Type="nvarchar" MaxLength="150" />
+          <Property Name="LinkYolu" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'JonsonDbMvc.dbo.HobilerTBL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="HobilerTBL">
+          <Property Name="ID" Type="int" />
+          <Property Name="Baslik" Type="nchar" MaxLength="30" />
+          <Property Name="İcerik" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+        <EntityType Name="MainTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nchar" MaxLength="10" />
+          <Property Name="AltBaslik" Type="nvarchar" MaxLength="50" />
+          <Property Name="icerik" Type="nvarchar" MaxLength="50" />
+          <Property Name="degisen1" Type="nchar" MaxLength="10" />
+          <Property Name="degisen2" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'JonsonDbMvc.dbo.MessageTbl' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="MessageTbl">
+          <Property Name="ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
+          <Property Name="Message" Type="nvarchar(max)" />
+        </EntityType>-->
+        <EntityType Name="PhotoTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="photo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="JonsonDbMvcModelStoreContainer">
+          <EntitySet Name="AboutTBL" EntityType="Self.AboutTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminTbl" EntityType="Self.AdminTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExperienceTBL" EntityType="Self.ExperienceTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainTBL" EntityType="Self.MainTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhotoTbl" EntityType="Self.PhotoTbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JonsonDbMvcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AboutTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icerik" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="icerik2" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AdminTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kullanıcı" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ExperienceTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="baslik" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Aralık" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LinkYolu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MainTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AltBaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="icerik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="degisen1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="degisen2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PhotoTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="JonsonDbMvcEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AboutTBL" EntityType="Self.AboutTBL" />
+          <EntitySet Name="AdminTbl" EntityType="Self.AdminTbl" />
+          <EntitySet Name="ExperienceTBL" EntityType="Self.ExperienceTBL" />
+          <EntitySet Name="MainTBL" EntityType="Self.MainTBL" />
+          <EntitySet Name="PhotoTbl" EntityType="Self.PhotoTbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JonsonDbMvcModelStoreContainer" CdmEntityContainer="JonsonDbMvcEntities">
+          <EntitySetMapping Name="AboutTBL">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.AboutTBL">
+              <MappingFragment StoreEntitySet="AboutTBL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="icerik2" ColumnName="icerik2" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminTbl">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.AdminTbl">
+              <MappingFragment StoreEntitySet="AdminTbl">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Kullanıcı" ColumnName="Kullanıcı" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExperienceTBL">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.ExperienceTBL">
+              <MappingFragment StoreEntitySet="ExperienceTBL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="Aralık" ColumnName="Aralık" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="LinkYolu" ColumnName="LinkYolu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainTBL">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.MainTBL">
+              <MappingFragment StoreEntitySet="MainTBL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="AltBaslik" ColumnName="AltBaslik" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="degisen1" ColumnName="degisen1" />
+                <ScalarProperty Name="degisen2" ColumnName="degisen2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhotoTbl">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.PhotoTbl">
+              <MappingFragment StoreEntitySet="PhotoTbl">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

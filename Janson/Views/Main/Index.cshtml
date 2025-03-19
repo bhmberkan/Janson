@@ -1,0 +1,50 @@
+﻿@using Janson.Models.Entity
+@model List<MainTBL>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+
+    @foreach (var x in Model)
+    {
+        <div class="slider-area">
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-12 col-lg-10 col-md-10 col-sm-10">
+                            <!-- Hero Caption -->
+                            <div class="hero__caption">
+                                <h1 class="is-visible">@x.Baslik</h1>
+                                <p>@x.AltBaslik</p>
+                                <p class="cd-headline letters scale">
+                                   @x.icerik
+                                    <a href="#" class="cd-words-wrapper">
+                                        <b class="is-visible">@x.degisen1</b>
+                                        <b>@x.degisen2</b>
+                                        
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+   
+    <!--? About 1 Start-->
+    @Html.Action("AboutUsPartial", "Main")
+    <!-- About  End-->
+    <!--? May-about Start -->
+    @Html.Action("MainExperiencePartial", "Main")
+    <!-- May-about End -->
+    <!--? My Expertise Start -->
+    @Html.Action("MainHobiPartial", "Main")
+    <!-- My Expertise End -->
+    <!--? Gallery Area Start -->
+    @Html.Action("MainGaleryPartial", "Main")
+    <!-- Gallery Area End -->
+</main>
+@Html.Action("ContactPartial", "Main")
