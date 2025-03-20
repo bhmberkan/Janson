@@ -10,6 +10,9 @@
         <EntityTypeShape EntityType="JonsonDbMvcModel.ExperienceTBL" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JonsonDbMvcModel.MainTBL" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JonsonDbMvcModel.PhotoTbl" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.AboutpartTbl" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.HobilerTBL" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.MessageTbl" Width="1.5" PointX="2.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

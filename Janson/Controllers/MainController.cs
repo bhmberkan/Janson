@@ -20,30 +20,37 @@ namespace Janson.Controllers
 
         public PartialViewResult AboutUsPartial()
         {
-            return PartialView();
+            var values = db.AboutTBL.ToList();
+            return PartialView(values);
         }
         public PartialViewResult AboutUsPartialprt()
         {
-            return PartialView();
+            var values = db.AboutpartTbl.ToList();
+            return PartialView(values);
         }
         public PartialViewResult MainExperiencePartial()
         {
-            return PartialView();
+            var values = db.ExperienceTBL.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult MainHobiPartial()
         {
-            return PartialView();
+           var values = db.HobilerTBL.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult MainGaleryPartial()
         {
-            return PartialView();
+            var values = db.PhotoTbl.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult ContactPartial()
         {
-            return PartialView();
+            // başka kodlar gelecek.
+            var values = db.MessageTbl.ToList();
+            return PartialView(values);
         }
     }
 }

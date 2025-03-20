@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="JonsonDbMvcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="JonsonDbMvcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AboutpartTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nchar" MaxLength="20" />
+          <Property Name="icerik" Type="nchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="AboutTBL">
           <Key>
             <PropertyRef Name="ID" />
@@ -32,13 +40,14 @@
           <Property Name="Link" Type="nvarchar" MaxLength="150" />
           <Property Name="LinkYolu" Type="nvarchar" MaxLength="200" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'JonsonDbMvc.dbo.HobilerTBL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="HobilerTBL">
-          <Property Name="ID" Type="int" />
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Baslik" Type="nchar" MaxLength="30" />
           <Property Name="İcerik" Type="nvarchar" MaxLength="100" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="MainTBL">
           <Key>
             <PropertyRef Name="ID" />
@@ -50,15 +59,16 @@ warning 6013: The table/view 'JonsonDbMvc.dbo.HobilerTBL' does not have a primar
           <Property Name="degisen1" Type="nchar" MaxLength="10" />
           <Property Name="degisen2" Type="nchar" MaxLength="10" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'JonsonDbMvc.dbo.MessageTbl' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="MessageTbl">
-          <Property Name="ID" Type="int" />
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="50" />
           <Property Name="Mail" Type="nvarchar" MaxLength="100" />
           <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
           <Property Name="Message" Type="nvarchar(max)" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="PhotoTbl">
           <Key>
             <PropertyRef Name="ID" />
@@ -67,14 +77,16 @@ warning 6013: The table/view 'JonsonDbMvc.dbo.MessageTbl' does not have a primar
           <Property Name="photo" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="JonsonDbMvcModelStoreContainer">
+          <EntitySet Name="AboutpartTbl" EntityType="Self.AboutpartTbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AboutTBL" EntityType="Self.AboutTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AdminTbl" EntityType="Self.AdminTbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExperienceTBL" EntityType="Self.ExperienceTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HobilerTBL" EntityType="Self.HobilerTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MainTBL" EntityType="Self.MainTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MessageTbl" EntityType="Self.MessageTbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhotoTbl" EntityType="Self.PhotoTbl" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JonsonDbMvcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -129,7 +141,36 @@ warning 6013: The table/view 'JonsonDbMvc.dbo.MessageTbl' does not have a primar
           <EntitySet Name="ExperienceTBL" EntityType="Self.ExperienceTBL" />
           <EntitySet Name="MainTBL" EntityType="Self.MainTBL" />
           <EntitySet Name="PhotoTbl" EntityType="Self.PhotoTbl" />
+          <EntitySet Name="AboutpartTbl" EntityType="JonsonDbMvcModel.AboutpartTbl" />
+          <EntitySet Name="HobilerTBL" EntityType="JonsonDbMvcModel.HobilerTBL" />
+          <EntitySet Name="MessageTbl" EntityType="JonsonDbMvcModel.MessageTbl" />
         </EntityContainer>
+        <EntityType Name="AboutpartTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="icerik" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HobilerTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="İcerik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MessageTbl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -183,6 +224,35 @@ warning 6013: The table/view 'JonsonDbMvc.dbo.MessageTbl' does not have a primar
               <MappingFragment StoreEntitySet="PhotoTbl">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AboutpartTbl">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.AboutpartTbl">
+              <MappingFragment StoreEntitySet="AboutpartTbl">
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HobilerTBL">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.HobilerTBL">
+              <MappingFragment StoreEntitySet="HobilerTBL">
+                <ScalarProperty Name="İcerik" ColumnName="İcerik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MessageTbl">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.MessageTbl">
+              <MappingFragment StoreEntitySet="MessageTbl">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
