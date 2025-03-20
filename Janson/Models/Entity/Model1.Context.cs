@@ -30,5 +30,8 @@ namespace Janson.Models.Entity
         public virtual DbSet<ExperienceTBL> ExperienceTBL { get; set; }
         public virtual DbSet<MainTBL> MainTBL { get; set; }
         public virtual DbSet<PhotoTbl> PhotoTbl { get; set; }
+        public virtual DbSet<AboutpartTbl> AboutpartTbl { get; set; }
+        public virtual DbSet<HobilerTBL> HobilerTBL { get; set; }
+        public virtual DbSet<MessageTbl> MessageTbl { get; set; }
     }
 }

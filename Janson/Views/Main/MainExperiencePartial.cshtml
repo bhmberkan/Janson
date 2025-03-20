@@ -1,4 +1,6 @@
-﻿
+﻿@using Janson.Models.Entity
+@model List<ExperienceTBL>
+
 <div class="may-about section-padding40">
     <div class="container">
         <div class="row">
@@ -7,40 +9,23 @@
                     <h2>Experience</h2>
                 </div>
             </div>
-            <div class="col-xl-12">
-                <div class="single-about">
-                    <div class="tittle-experience">
-                        <h3>User Experience Designer</h3>
-                        <p>Jan 18 - Feb 20</p>
-                    </div>
-                    <div class="experience-link">
-                        <a href="#">Yeadi Tech, NY <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="single-about">
-                    <div class="tittle-experience">
-                        <h3>Web Designer</h3>
-                        <p>Jan 18 - Feb 20</p>
-                    </div>
-                    <div class="experience-link">
-                        <a href="#">Yeadi Tech, NY <i class="fas fa-external-link-alt"></i></a>
+            @foreach (var x in Model)
+            {
+                <div class="col-xl-12">
+                    <div class="single-about">
+                        <div class="tittle-experience">
+                            <h3>@x.baslik</h3>
+                            <p>@x.Aralık</p>
+                        </div>
+                        <div class="experience-link">
+                            <a href="@x.LinkYolu" target="_blank">@x.Link<i class="fas fa-external-link-alt" ></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-12">
-                <div class="single-about">
-                    <div class="tittle-experience">
-                        <h3>UI Designer</h3>
-                        <p>Jan 18 - Feb 20</p>
-                    </div>
-                    <div class="experience-link">
-                        <a href="#">Yeadi Tech, NY <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-          
+            }
+
+
+
         </div>
     </div>
 </div>
