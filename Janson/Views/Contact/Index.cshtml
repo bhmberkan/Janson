@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="hero-area2 d-flex align-items-center">
+    <div class="container">
+        <div class="row ">
+            <div class="col-xl-12">
+                <!-- Hero Caption -->
+                <div class="hero-cap pt-100">
+                    <h2>İletişim</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="contact-section">
+    <div class="container">
+        <div class="d-none d-sm-block mb-5 pb-4">
+            <div class="container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5344.6461072368975!2d38.79828897455717!3d37.201521786676956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15347a98a46390a9%3A0xaa26baaacdc26bbf!2zWWVsa2VuJ3MgdG93ZXJzIEthcmFhxJ9hw6cgaW7Fnw!5e0!3m2!1str!2str!4v1733334253019!5m2!1str!2str" width="600" height="450" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <br /> <br /> <br />
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="contact-title">Tanıtım</h2>
+                </div>
+                <div class="col-lg-8">
+                    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <div class="row">
+                            <iframe width="960" height="305" src="https://www.youtube.com/embed/FFd6b___5Hg?si=FMSDf97BKO727FPg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+
+                    </form>
+                </div> <br />
+                
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><i class="ti-home"></i></span>
+                        <div class="media-body">
+                            <h3>Buttonwood, California.</h3>
+                            <p>Ankara, TR 91770</p>
+                        </div>
+                    </div>
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                        <div class="media-body">
+                            <h3> <a href="https://wa.me/905059884677" target="_blank">+90 565 2365</a> </h3>
+                            <p>Hafta içi her gün 9-5 açığız</p>
+                        </div>
+                    </div>
+                    <div class="media contact-info">
+                        <span class="contact-info__icon"><i class="ti-email"></i></span>
+                        <div class="media-body">
+                            <h3>berkanburakturgut@gmail.com</h3>
+                            <p>Sorularınızı bana gönderebilirsiniz!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Action("ContactPartial", "Main")

@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="hero-area2 d-flex align-items-center">
+    <div class="container">
+        <div class="row ">
+            <div class="col-xl-12">
+                <!-- Hero Caption -->
+                <div class="hero-cap pt-100">
+                    <h2>My Protfolio</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Html.Action("AboutUsPartial", "Main")
+
+@Html.Action("ContactPartial", "Main")
+
+
+@*<section class="about-area section-padding40">
+        <div class="container">
+            @foreach (var x in Model)
+            {
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-10">
+                        <div class="about-caption mb-50">
+                             Section Tittle
+                            <div class="section-tittle mb-35">
+                                <h2>About</h2>
+                            </div>
+                            <p>@x.icerik</p>
+
+                            <p>@x.icerik2</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-img">
+                            <img src="@x.photo" alt="">
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @Html.Action("AboutUsPartialprt", "Main")
+        </div>
+    </section>*@
