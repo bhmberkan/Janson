@@ -1,4 +1,4 @@
-﻿
+﻿@model Janson.Models.Entity.MessageTbl
 <footer>
     <div class="footer-wrappr">
         <div class="footer-top">
@@ -36,22 +36,26 @@
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-box user-icon mb-25">
-                                            <input type="text" name="name" placeholder="Your name">
+                                            @Html.TextBoxFor(x => x.Name, new { @type = "text", PlaceHolder = "Your name", requried = "" })
+                                         @*   <input type="text" name="name" placeholder="Your name">*@
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-box email-icon mb-25">
-                                            <input type="text" name="email" placeholder="Email">
+                                            @Html.TextBoxFor(x => x.Mail, new { @type = "email", PlaceHolder = "Your Mail", requried = "" })
+                                        @*    <input type="text" name="email" placeholder="Email">*@
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-box email-icon mb-25">
-                                            <input type="text" name="email" placeholder="Subject">
+                                            @Html.TextBoxFor(x => x.Baslik, new { @type = "text",  PlaceHolder = "Subject", requried = "" })
+                                         @*   <input type="text" name="email" placeholder="Subject">*@
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-box message-icon mb-25">
-                                            <textarea name="message" id="message" placeholder="Message"></textarea>
+                                            @Html.TextAreaFor(x => x.Message, new {  PlaceHolder = "Your name", requried = "" })
+                                        @*    <textarea name="message" id="message" placeholder="Message"></textarea>*@
                                         </div>
                                         <div class="submit-info">
                                             <button class="submit-btn2" type="submit">Send Message</button>
