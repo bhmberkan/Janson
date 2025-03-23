@@ -1,0 +1,38 @@
+﻿@using Janson.Models.Entity
+@model List<AboutpartTbl>
+
+
+<h2>About Partial</h2>
+
+
+<table class="table table-bordered form-group" style="background-color:rgb(255, 216, 0); border-radius:10px; font-family:Arial; font-size:15px;">
+    <tr>
+
+        <th>İcerik</th>
+        <th>Degisen 1</th>
+        <th>Degisen 2</th>
+
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.Baslik</td>
+            <td>@x.icerik</td>
+
+
+
+
+            <td><a href="/AdminAboutP/UpdateAboutPPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-dark">Güncelle</a></td>
+            <td><a href="/AdminAboutP/DeleteAboutPPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-secondary">Sil</a></td>
+
+        </tr>
+
+    }
+</table>
+
+
+
+<a href="/AdminAboutP/InsertAboutPPage/" class="btn  btn-outline-info">Ekle</a>
