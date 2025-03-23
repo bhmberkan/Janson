@@ -1,0 +1,29 @@
+﻿@model Janson.Models.Entity.AboutpartTbl
+@{
+    ViewBag.Title = "InsertAboutPPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>InsertAboutPPage</h2>
+
+
+
+<form method="post">
+
+
+    @Html.Label("Başlık ")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("İçerik")
+    @Html.TextBoxFor(x => x.icerik, new { @class = "form-control" })
+    <br />
+
+  
+  
+
+    <button class="btn btn-info"> Ekle </button>
+
+
+</form>
+

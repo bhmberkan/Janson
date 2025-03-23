@@ -1,0 +1,38 @@
+﻿@model Janson.Models.Entity.MainTBL
+@{
+    ViewBag.Title = "UpdateMainPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateMainPage</h2>
+
+
+
+<br />
+
+@using (Html.BeginForm("UpdateMainpages", "Admin", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID) // hiddenfor arka planda çalışacak anlamında
+    <br />
+
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x=>x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alt Baslik")
+    @Html.TextAreaFor(x => x.AltBaslik, 10, 4, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.Label("Degisen 1")
+    @Html.TextBoxFor(x => x.degisen1, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.Label("Degisen 2")
+    @Html.TextBoxFor(x => x.degisen2, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary"> Değişiklikleri Kaydet </button>
+
+}

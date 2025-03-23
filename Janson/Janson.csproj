@@ -160,6 +160,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminAboutController.cs" />
+    <Compile Include="Controllers\AdminAboutPController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -5764,6 +5766,13 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\SideBarPartial.cshtml" />
     <Content Include="Views\Admin\AdminHeader.cshtml" />
+    <Content Include="Views\Admin\UpdateMainPage.cshtml" />
+    <Content Include="Views\AdminAbout\Index.cshtml" />
+    <Content Include="Views\AdminAbout\UpdateAboutPage.cshtml" />
+    <Content Include="Views\AdminAboutP\Index.cshtml" />
+    <Content Include="Views\AdminAboutP\InsertAboutPPage.cshtml" />
+    <Content Include="Views\AdminAboutP\UpdateAboutPPage.cshtml" />
+    <Content Include="Views\AdminAboutP\AdminAboutPPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

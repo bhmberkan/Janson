@@ -17,6 +17,27 @@ namespace Janson.Controllers
             return View(values);
         }
 
+        [HttpGet]
+        public ActionResult UpdateMainPage(int id)
+        {
+            var values = db.MainTBL.Find(id);
+            return View("UpdateMainPage",values);
+        }
+        [HttpPost]
+        public ActionResult UpdateMainPages(MainTBL t)
+        {
+            var value = db.MainTBL.Find(t.ID);
+            value.Baslik = t.Baslik;
+            value.AltBaslik = t.AltBaslik;
+            value.degisen1 = t.degisen1;
+            value.degisen2 = t.degisen2;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+        }
+        
+
         public PartialViewResult SideBarPartial()
         {
             return PartialView();

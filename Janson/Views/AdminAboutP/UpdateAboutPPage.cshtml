@@ -1,0 +1,28 @@
+﻿@model Janson.Models.Entity.AboutpartTbl
+@{
+    ViewBag.Title = "UpdateAboutPPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateAboutPPage</h2>
+
+<br />
+
+@using (Html.BeginForm("UpdateAboutPpages", "AdminAboutP", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID) // hiddenfor arka planda çalışacak anlamında
+    <br />
+
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.Label("İçerik")
+    @Html.TextAreaFor(x => x.icerik, 10, 4, new { @class = "form-control" })
+    <br />
+
+
+
+    <button class="btn btn-primary"> Değişiklikleri Kaydet </button>
+
+}
