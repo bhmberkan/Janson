@@ -1,0 +1,24 @@
+﻿@model Janson.Models.Entity.PhotoTbl
+@{
+    ViewBag.Title = "InsertGaleryPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>InsertGaleryPage</h2>
+
+<br />
+
+<form method="post">
+
+
+    @Html.Label("Photo Link ")
+    @Html.TextBoxFor(x=>x.photo, new { @class = "form-control" })
+    <br />
+
+
+
+
+    <button class="btn btn-info"> Ekle </button>
+
+
+</form>

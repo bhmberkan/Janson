@@ -1,0 +1,26 @@
+﻿@model Janson.Models.Entity.PhotoTbl
+@{
+    ViewBag.Title = "UpdateGaleryPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateGaleryPage</h2>
+
+<br />
+
+
+@using (Html.BeginForm("UpdateGaleryPages", "AdminGalery", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID) // hiddenfor arka planda çalışacak anlamında
+    <br />
+
+    @Html.Label("Photo Link")
+    @Html.TextBoxFor(x => x.photo, new { @class = "form-control" })
+    <br />
+   
+
+
+    <button class="btn btn-primary"> Değişiklikleri Kaydet </button>
+
+}

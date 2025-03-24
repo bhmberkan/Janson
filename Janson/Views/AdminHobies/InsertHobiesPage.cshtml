@@ -1,0 +1,28 @@
+﻿@model Janson.Models.Entity.HobilerTBL
+
+@{
+    ViewBag.Title = "InsertHobiesPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>InsertHobiesPage</h2>
+
+
+<form method="post">
+
+
+    @Html.Label("Başlık ")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("İçerik")
+    @Html.TextBoxFor(x => x.İcerik, new { @class = "form-control" })
+    <br />
+
+
+
+
+    <button class="btn btn-info"> Ekle </button>
+
+
+</form>
