@@ -1,0 +1,28 @@
+﻿@model Janson.Models.Entity.HobilerTBL
+
+@{
+    ViewBag.Title = "UpdateHobiesPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateHobiesPage</h2>
+<br />
+
+@using (Html.BeginForm("UpdateHobiespages", "AdminHobies", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID) // hiddenfor arka planda çalışacak anlamında
+    <br />
+
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x=>x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.Label("İçerik")
+    @Html.TextBoxFor(x => x.İcerik, new { @class = "form-control" })
+    <br />
+
+
+
+    <button class="btn btn-primary"> Değişiklikleri Kaydet </button>
+
+}

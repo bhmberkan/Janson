@@ -1,0 +1,45 @@
+﻿@using Janson.Models.Entity
+@model List<PhotoTbl>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+
+<table class="table table-bordered form-group" style="background-color:rgb(255, 216, 0); border-radius:10px; font-family:Arial; font-size:15px;">
+    <tr>
+
+
+        <th>Photo</th>
+        <th>Görsel</th>
+
+
+
+        <th>Güncelle</th>
+        <th>Sil</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.photo</td>
+            <td><img src="@x.photo" alt="Görsel" style="width:100px; height:auto; border-radius:5px;" /></td>
+
+
+
+
+            <td><a href="/AdminGalery/UpdateGaleryPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-dark">Güncelle</a></td>
+            <td><a href="/AdminGalery/DeleteGaleryPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-secondary">Sil</a></td>
+
+        </tr>
+
+    }
+</table>
+
+
+
+<a href="/AdminGalery/InsertGaleryPage/" class="btn  btn-outline-info">Ekle</a>
