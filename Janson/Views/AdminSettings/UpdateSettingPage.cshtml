@@ -1,0 +1,31 @@
+﻿@model Janson.Models.Entity.AdminTbl
+@{
+    ViewBag.Title = "UpdateSettingPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateSettingPage</h2>
+<br />
+
+
+
+@using (Html.BeginForm("UpdateSettingPages", "AdminSettings", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID) // hiddenfor arka planda çalışacak anlamında
+    <br />
+
+    @Html.Label("Kullanıcı")
+    @Html.TextBoxFor(x => x.Kullanıcı, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+
+
+
+    <button class="btn btn-primary"> Değişiklikleri Kaydet </button>
+
+}

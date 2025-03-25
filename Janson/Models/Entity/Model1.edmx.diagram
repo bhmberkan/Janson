@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="bd3322bfdd664314ae768056fb62a571" Name="Diagram1">
-        <EntityTypeShape EntityType="JonsonDbMvcModel.AboutTBL" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.AboutTBL" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JonsonDbMvcModel.AdminTbl" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JonsonDbMvcModel.ExperienceTBL" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JonsonDbMvcModel.MainTBL" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />

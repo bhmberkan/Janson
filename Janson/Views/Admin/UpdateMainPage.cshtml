@@ -17,11 +17,17 @@
     <br />
 
     @Html.Label("Başlık")
-    @Html.TextBoxFor(x=>x.Baslik, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
     <br />
     @Html.Label("Alt Baslik")
-    @Html.TextAreaFor(x => x.AltBaslik, 10, 4, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.AltBaslik,  new { @class = "form-control" })
     <br />
+
+    <br />
+    @Html.Label("İcerik")
+    @Html.TextAreaFor(x => x.icerik, 7,4, new { @class = "form-control" })
+    <br />
+
 
     <br />
     @Html.Label("Degisen 1")

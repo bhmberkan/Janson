@@ -1,0 +1,32 @@
+﻿@model Janson.Models.Entity.AdminTbl
+@{
+    ViewBag.Title = "InsertSettingPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Insert Setting Page</h2>
+
+<br />
+
+
+<form method="post">
+
+
+    @Html.Label("Kullanıcı")
+    @Html.TextBoxFor(x => x.Kullanıcı, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+
+
+
+
+
+    <button class="btn btn-info"> Ekle </button>
+
+
+</form>
+
