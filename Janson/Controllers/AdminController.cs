@@ -29,6 +29,7 @@ namespace Janson.Controllers
             var value = db.MainTBL.Find(t.ID);
             value.Baslik = t.Baslik;
             value.AltBaslik = t.AltBaslik;
+            value.icerik= t.icerik;
             value.degisen1 = t.degisen1;
             value.degisen2 = t.degisen2;
             db.SaveChanges();

@@ -1,0 +1,47 @@
+﻿@using Janson.Models.Entity
+@model List<ExperienceTBL>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Experience</h2>
+<br />
+
+
+
+<table class="table table-bordered form-group" style="background-color: rgb(36, 113, 163); border-radius: 10px; font-family: Arial; font-size: 15px;">
+    <tr>
+
+        <th>Başlık</th>
+        <th>Tarih Aralığı</th>
+        <th>Link</th>
+        <th>Link Yolu</th>
+        <th>Güncelle</th>
+
+        <th>Sil</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.baslik</td>
+            <td>@x.Aralık</td>
+            <td>@x.Link</td>
+            <td>@x.LinkYolu</td>
+
+
+
+            <td><a href="/AdminExperience/UpdateExperiencepage/@x.ID" class="btn mb-1 btn-rounded btn-outline-success">Güncelle</a></td>
+            <td><a href="/AdminExperience/DeleteExperiencepage/@x.ID" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
+
+        </tr>
+
+    }
+</table>
+
+
+
+
+<a href="/AdminExperience/InsertExperiencePage/" class="btn  btn-outline-info">Ekle</a>

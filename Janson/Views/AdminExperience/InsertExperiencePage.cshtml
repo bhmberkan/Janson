@@ -1,0 +1,39 @@
+﻿@model Janson.Models.Entity.ExperienceTBL
+@{
+    ViewBag.Title = "InsertExperiencePage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>InsertExperiencePage</h2>
+<br />
+
+<form method="post">
+
+
+    @Html.Label("Baslik ")
+    @Html.TextBoxFor(x => x.baslik, new { @class = "form-control" })
+    <br />
+    
+
+    @Html.Label("Tarih Aralığı ")
+    @Html.TextBoxFor(x => x.Aralık, new { @class = "form-control" })
+    <br />
+    
+
+    @Html.Label("Link ")
+    @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+    <br />
+    
+
+    @Html.Label("Link Yolu ")
+    @Html.TextBoxFor(x => x.LinkYolu, new { @class = "form-control" })
+    <br />
+
+
+
+
+    <button class="btn btn-info"> Ekle </button>
+
+
+</form>
+
