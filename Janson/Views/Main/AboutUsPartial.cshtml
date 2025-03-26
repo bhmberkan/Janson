@@ -1,7 +1,7 @@
 ﻿@using Janson.Models.Entity
 @model List<AboutTBL>
 
-<section class="about-area section-padding40">
+<section class="about-area section-padding40" style="background-color: rgb(19,43,43) ">
     <div class="container">
         @foreach (var x in Model)
         {
@@ -12,9 +12,9 @@
                         <div class="section-tittle mb-35">
                             <h2>About</h2>
                         </div>
-                        <p>@x.icerik</p>
+                        <p style="color:white" >@x.icerik</p>
 
-                        <p>@x.icerik2</p>
+                        <p style="color:white">@x.icerik2</p>
                     </div>
                 </div>
                 <div class="col-lg-6">

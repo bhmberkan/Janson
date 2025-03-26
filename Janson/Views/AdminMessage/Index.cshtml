@@ -1,0 +1,39 @@
+﻿@using Janson.Models.Entity
+@model List<MessageTbl>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Messages</h2>
+<br />
+
+
+<table class="table table-bordered form-group" style="background-color: rgb(36, 113, 163); border-radius: 10px; font-family: Arial; font-size: 15px;">
+    <tr>
+
+        <th>ID</th>
+        <th>Gönderen</th>
+        <th>Baslik</th>
+
+        <th>Detay</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.ID</td>
+            <td>@x.Name</td>
+            <td>@x.Baslik</td>
+
+
+
+
+            <td><a href="/AdminMessage/MessageDetails/@x.ID" class="btn mb-1 btn-rounded btn-pinterest">Detay</a></td>
+
+        </tr>
+
+    }
+</table>
+
