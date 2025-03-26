@@ -1,0 +1,41 @@
+﻿@using Janson.Models.Entity
+@model  MessageTbl
+@{
+    ViewBag.Title = "MessageDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>MessageDetails</h2>
+<br />
+
+
+<table class="table table-bordered form-group" style="background-color: rgb(36, 113, 163); border-radius: 10px; font-family: Arial; font-size: 15px;">
+    <tr>
+
+        <th>ID</th>
+        <th>Gönderen</th>
+        <th>Gönderen</th>
+        <th>Baslik</th>
+
+        <th>Sil</th>
+
+    </tr>
+   
+    
+        <tr>
+
+            <td>@Model.ID</td>
+            <td>@Model.Name</td>
+            <td>@Model.Baslik</td>
+            <td>@Model.Message</td>
+
+            @*mesajın gönderildiği tarihi alsam tatlı olurmuş*@
+          
+            <td><a href="/AdminMessage/RemoveMessage/@Model.ID" class="btn mb-1 btn-rounded btn-outline-warning">Sil</a></td>
+
+        </tr>
+
+    
+</table>
+
+

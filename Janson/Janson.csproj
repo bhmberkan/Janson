@@ -166,6 +166,7 @@
     <Compile Include="Controllers\AdminExperienceController.cs" />
     <Compile Include="Controllers\AdminGaleryController.cs" />
     <Compile Include="Controllers\AdminHobiesController.cs" />
+    <Compile Include="Controllers\AdminMessageController.cs" />
     <Compile Include="Controllers\AdminSettingsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -5789,6 +5790,8 @@
     <Content Include="Views\AdminSettings\Index.cshtml" />
     <Content Include="Views\AdminSettings\InsertSettingPage.cshtml" />
     <Content Include="Views\AdminSettings\UpdateSettingPage.cshtml" />
+    <Content Include="Views\AdminMessage\Index.cshtml" />
+    <Content Include="Views\AdminMessage\MessageDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
