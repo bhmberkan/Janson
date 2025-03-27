@@ -1,0 +1,155 @@
+﻿@using Janson.Models.Entity
+@model List<BlogTBL>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!--? Hero Area Start-->
+<div class="hero-area2 d-flex align-items-center">
+    <div class="container">
+        <div class="row ">
+            <div class="col-xl-12">
+                <!-- Hero Caption -->
+                <div class="hero-cap pt-100">
+                    <h2>blog</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Hero Area End-->
+<!-- Hero Area End-->
+<!--? Blog Area Start-->
+<section class="blog_area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="blog_left_sidebar">
+                    @foreach (var x in Model)
+                    {
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="@x.Photo" alt="">
+                                <a href="#" class="blog_item_date">
+
+                                    <p>@x.Tarih</p>
+                                </a>
+                            </div>
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="BlogDetails/@x.ID">
+                                    <h2 class="blog-head" style="color: #2d2d2d;">@x.Baslik</h2>
+                                </a>
+                                <p>
+                                    @x.icerik.Substring(0, Math.Min(100, x.icerik.Length))
+                                </p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> @x.Olusturan </a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i>@x.MesageBlogTBL.Count(y => y.BlogID == x.ID) Yorum</a></li>
+                                </ul>
+                            </div>
+                        </article>
+                    }
+
+
+
+                    @* Paging *@
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="/Blog/Index/2" class="page-link" aria-label="Previous">
+                                    <i class="ti-angle-left"></i>
+                                </a>
+                            </li>
+
+                            <li class="page-item">
+                                <a href="/Blog/Index/1" class="page-link">1</a>
+                            </li>
+
+                            <li class="page-item active">
+                                <a href="/Blog/Index/2" class="page-link">2</a>
+                            </li>
+
+                            <li class="page-item active">
+                                <a href="/Blog/Index/3" class="page-link">3</a>
+                            </li>
+
+                            <li class="page-item">
+                                <a href="/Blog/Index/1" class="page-link" aria-label="Next">
+                                    <i class="ti-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+
+                    @* search *@
+                    <aside class="single_sidebar_widget search_widget">
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Search Keyword'
+                                           onfocus="this.placeholder = ''"
+                                           onblur="this.placeholder = 'Search Keyword'">
+                                    <div class="input-group-append">
+                                        <button class="btns" type="button"><i class="ti-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">
+                                Search
+                            </button>
+                        </form>
+                    </aside>
+
+                    <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
+                        <ul class="list cat-list">
+
+
+
+                            @foreach (var Category in Model.Select(x => x.Category).Distinct())
+                            {
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>@Category</p> &ensp;
+                                    </a>
+                                </li>
+                            }
+
+
+
+
+                        </ul>
+                    </aside>
+                  
+                    @* recent post kısmı yani son postlar kısmı şu anlık duruyor düşüncem *@
+                  @Html.Action("RecendPartial")
+
+                    <aside class="single_sidebar_widget tag_cloud_widget">
+                        <h4 class="widget_title" style="color: #2d2d2d;">Tag Clouds</h4>
+                        <ul class="list">
+                            @foreach (var Tag in Model.Select(x => x.Tag).Distinct())
+                            {
+                                <li>
+                                    <p>@Tag</p> &ensp;
+                                </li>
+                            }
+
+                        </ul>
+                    </aside>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Area End -->
