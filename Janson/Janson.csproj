@@ -168,6 +168,7 @@
     <Compile Include="Controllers\AdminHobiesController.cs" />
     <Compile Include="Controllers\AdminMessageController.cs" />
     <Compile Include="Controllers\AdminSettingsController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ProtfolioController.cs" />
@@ -183,6 +184,9 @@
     <Compile Include="Models\Entity\AdminTbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\BlogTBL.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\ExperienceTBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -190,6 +194,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\MainTBL.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\MesageBlogTBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\MessageTbl.cs">
@@ -5792,6 +5799,8 @@
     <Content Include="Views\AdminSettings\UpdateSettingPage.cshtml" />
     <Content Include="Views\AdminMessage\Index.cshtml" />
     <Content Include="Views\AdminMessage\MessageDetails.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\RecendPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

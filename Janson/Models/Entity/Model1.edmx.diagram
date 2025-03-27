@@ -5,14 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="bd3322bfdd664314ae768056fb62a571" Name="Diagram1">
-        <EntityTypeShape EntityType="JonsonDbMvcModel.AboutTBL" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JonsonDbMvcModel.AdminTbl" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JonsonDbMvcModel.ExperienceTBL" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JonsonDbMvcModel.MainTBL" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JonsonDbMvcModel.PhotoTbl" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JonsonDbMvcModel.AboutpartTbl" Width="1.5" PointX="5.375" PointY="3.75" />
-        <EntityTypeShape EntityType="JonsonDbMvcModel.HobilerTBL" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="JonsonDbMvcModel.MessageTbl" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.AboutTBL" Width="1.5" PointX="3.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.AdminTbl" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.ExperienceTBL" Width="1.5" PointX="0.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.MainTBL" Width="1.5" PointX="2.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.PhotoTbl" Width="1.5" PointX="2.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.AboutpartTbl" Width="1.5" PointX="3.875" PointY="2.625" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.HobilerTBL" Width="1.5" PointX="5.875" PointY="3.875" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.MessageTbl" Width="1.5" PointX="8.125" PointY="3.5" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.BlogTBL" Width="1.5" PointX="5.875" PointY="0.5" />
+        <EntityTypeShape EntityType="JonsonDbMvcModel.MesageBlogTBL" Width="1.5" PointX="8.25" PointY="0.625" />
+        <AssociationConnector Association="JonsonDbMvcModel.FK_MesageBlogTBL_BlogTBL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

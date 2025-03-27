@@ -87,5 +87,11 @@ namespace Janson.Controllers
 
             return PartialView();
         }
+
+        // blog kısmında blog ve blog detail adında iki tablo açmak yerine tek tablodan gidicem.
+        // bloglarla blog mesajlarını ilişkilendiricem. yukarıdaki ilişkiyi gereksiz buldum temada sadece blog detayda fazladan içerik girilmiş
+        // bunun yerine ilk sayfada belirli bir kısmı çekip ikincide tamamını çekerım.
+
+        // fotolar kısmında yorum yaparken foto kısmında link ekleyip ordan veri çekicem
     }
 }

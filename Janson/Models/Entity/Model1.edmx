@@ -30,6 +30,20 @@
           <Property Name="Kullanıcı" Type="nchar" MaxLength="30" />
           <Property Name="Sifre" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="BlogTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="Tarih" Type="nchar" MaxLength="20" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
+          <Property Name="icerik" Type="nvarchar(max)" />
+          <Property Name="Olusturan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="50" />
+          <Property Name="OlusturanYorum" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="ExperienceTBL">
           <Key>
             <PropertyRef Name="ID" />
@@ -59,6 +73,18 @@
           <Property Name="degisen1" Type="nchar" MaxLength="10" />
           <Property Name="degisen2" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="MesageBlogTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="İsim" Type="nvarchar" MaxLength="73" />
+          <Property Name="CreateAt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="150" />
+          <Property Name="icerik" Type="nvarchar(max)" />
+          <Property Name="BlogID" Type="int" />
+        </EntityType>
         <EntityType Name="MessageTbl">
           <Key>
             <PropertyRef Name="ID" />
@@ -76,15 +102,33 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="photo" Type="nvarchar(max)" />
         </EntityType>
+        <Association Name="FK_MesageBlogTBL_BlogTBL">
+          <End Role="BlogTBL" Type="Self.BlogTBL" Multiplicity="0..1" />
+          <End Role="MesageBlogTBL" Type="Self.MesageBlogTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogTBL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MesageBlogTBL">
+              <PropertyRef Name="BlogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="JonsonDbMvcModelStoreContainer">
           <EntitySet Name="AboutpartTbl" EntityType="Self.AboutpartTbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AboutTBL" EntityType="Self.AboutTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AdminTbl" EntityType="Self.AdminTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BlogTBL" EntityType="Self.BlogTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExperienceTBL" EntityType="Self.ExperienceTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HobilerTBL" EntityType="Self.HobilerTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MainTBL" EntityType="Self.MainTBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MesageBlogTBL" EntityType="Self.MesageBlogTBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MessageTbl" EntityType="Self.MessageTbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhotoTbl" EntityType="Self.PhotoTbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_MesageBlogTBL_BlogTBL" Association="Self.FK_MesageBlogTBL_BlogTBL">
+            <End Role="BlogTBL" EntitySet="BlogTBL" />
+            <End Role="MesageBlogTBL" EntitySet="MesageBlogTBL" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -144,6 +188,12 @@
           <EntitySet Name="AboutpartTbl" EntityType="JonsonDbMvcModel.AboutpartTbl" />
           <EntitySet Name="HobilerTBL" EntityType="JonsonDbMvcModel.HobilerTBL" />
           <EntitySet Name="MessageTbl" EntityType="JonsonDbMvcModel.MessageTbl" />
+          <EntitySet Name="BlogTBL" EntityType="JonsonDbMvcModel.BlogTBL" />
+          <EntitySet Name="MesageBlogTBL" EntityType="JonsonDbMvcModel.MesageBlogTBL" />
+          <AssociationSet Name="FK_MesageBlogTBL_BlogTBL" Association="JonsonDbMvcModel.FK_MesageBlogTBL_BlogTBL">
+            <End Role="BlogTBL" EntitySet="BlogTBL" />
+            <End Role="MesageBlogTBL" EntitySet="MesageBlogTBL" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AboutpartTbl">
           <Key>
@@ -171,6 +221,46 @@
           <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="BlogTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Olusturan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OlusturanYorum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MesageBlogTBL" Relationship="JonsonDbMvcModel.FK_MesageBlogTBL_BlogTBL" FromRole="BlogTBL" ToRole="MesageBlogTBL" />
+        </EntityType>
+        <EntityType Name="MesageBlogTBL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="İsim" Type="String" MaxLength="73" FixedLength="false" Unicode="true" />
+          <Property Name="CreateAt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BlogID" Type="Int32" />
+          <NavigationProperty Name="BlogTBL" Relationship="JonsonDbMvcModel.FK_MesageBlogTBL_BlogTBL" FromRole="MesageBlogTBL" ToRole="BlogTBL" />
+        </EntityType>
+        <Association Name="FK_MesageBlogTBL_BlogTBL">
+          <End Type="JonsonDbMvcModel.BlogTBL" Role="BlogTBL" Multiplicity="0..1" />
+          <End Type="JonsonDbMvcModel.MesageBlogTBL" Role="MesageBlogTBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogTBL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MesageBlogTBL">
+              <PropertyRef Name="BlogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -252,6 +342,34 @@
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogTBL">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.BlogTBL">
+              <MappingFragment StoreEntitySet="BlogTBL">
+                <ScalarProperty Name="OlusturanYorum" ColumnName="OlusturanYorum" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Olusturan" ColumnName="Olusturan" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MesageBlogTBL">
+            <EntityTypeMapping TypeName="JonsonDbMvcModel.MesageBlogTBL">
+              <MappingFragment StoreEntitySet="MesageBlogTBL">
+                <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+                <ScalarProperty Name="İsim" ColumnName="İsim" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
