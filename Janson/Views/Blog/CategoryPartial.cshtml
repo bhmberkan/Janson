@@ -1,0 +1,24 @@
+﻿@using Janson.Models.Entity
+@model List<BlogTBL>
+
+<aside class="single_sidebar_widget post_category_widget">
+    <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
+    <ul class="list cat-list">
+
+
+
+        @foreach (var Category in Model.Select(x => x.Category).Distinct())
+        {
+            <li>
+                <a href="#" >@Category &ensp;
+                    
+                </a>
+            </li>
+        }
+
+
+
+
+    </ul>
+</aside>
+

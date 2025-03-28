@@ -35,5 +35,19 @@ namespace Janson.Controllers
             
             return PartialView(values);
         }
+
+        public PartialViewResult TagPartial()
+        {
+            var values = db.BlogTBL.OrderByDescending(x => x.ID).Take(4).ToList();
+
+            return PartialView(values);
+        }
+
+        public PartialViewResult CategoryPartial()
+        {
+            var values = db.BlogTBL.ToList();
+
+            return PartialView(values);
+        }
     }
 }
