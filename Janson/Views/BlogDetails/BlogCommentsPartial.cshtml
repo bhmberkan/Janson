@@ -1,0 +1,33 @@
+﻿@using Janson.Models.Entity
+@model List<MesageBlogTBL>
+
+
+@foreach (var x in Model)
+{
+    <div class="comment-list">
+        <div class="single-comment justify-content-between d-flex">
+            <div class="user justify-content-between d-flex">
+                <div class="thumb">
+                    <img src="@x.Photo" alt="" style="width: 83px;  height: 83px;  object-fit: cover;  border-radius: 35%;">
+                </div>
+                <div class="desc">
+                    <p class="comment">
+                        @x.icerik
+                    </p>
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <h5>
+                                <a href="#">@x.İsim</a>
+                            </h5>
+                            <p class="date">@x.CreateAt </p>
+                            @* ekleme yaptırırken tarih formatına dikkat et  *@
+                            @* Daha kodlamadım  *@
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

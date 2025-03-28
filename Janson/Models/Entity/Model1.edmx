@@ -43,6 +43,7 @@
           <Property Name="Category" Type="nvarchar" MaxLength="50" />
           <Property Name="Tag" Type="nvarchar" MaxLength="50" />
           <Property Name="OlusturanYorum" Type="nvarchar(max)" />
+          <Property Name="OlusturanPhoto" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ExperienceTBL">
           <Key>
@@ -235,6 +236,7 @@
           <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OlusturanYorum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="MesageBlogTBL" Relationship="JonsonDbMvcModel.FK_MesageBlogTBL_BlogTBL" FromRole="BlogTBL" ToRole="MesageBlogTBL" />
+          <Property Name="OlusturanPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="MesageBlogTBL">
           <Key>
@@ -349,6 +351,7 @@
           <EntitySetMapping Name="BlogTBL">
             <EntityTypeMapping TypeName="JonsonDbMvcModel.BlogTBL">
               <MappingFragment StoreEntitySet="BlogTBL">
+                <ScalarProperty Name="OlusturanPhoto" ColumnName="OlusturanPhoto" />
                 <ScalarProperty Name="OlusturanYorum" ColumnName="OlusturanYorum" />
                 <ScalarProperty Name="Tag" ColumnName="Tag" />
                 <ScalarProperty Name="Category" ColumnName="Category" />

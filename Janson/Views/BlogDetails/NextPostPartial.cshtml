@@ -1,0 +1,45 @@
+﻿@model Janson.Models.Entity.BlogTBL
+
+
+<div class="navigation-area">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+            <div class="thumb">
+                <a href="@(Model.ID >1 ? Model.ID-1 : Model.ID)">
+                    <img class="img-fluid" src="@ViewBag.PreviusPhoto" alt="" style="width:77px; height:auto;">
+                </a>
+            </div>
+            <div class="arrow">
+                <a href="@(Model.ID >1 ? Model.ID-1 : Model.ID)"">
+                    <span class="lnr text-white ti-arrow-left"></span>
+                </a>
+            </div>
+            <div class="detials">
+                <p>Önceki Sayfa</p>
+                <a href="@(Model.ID >1 ? Model.ID-1 : Model.ID)"">
+                    <h4 style="color: #2d2d2d;">@ViewBag.PreviousTitle</h4>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+            <div class="detials">
+                <p>Sonraki Sayfa</p>
+                <a href="@(Model.ID < ViewBag.MaxID ? Model.ID+1 : Model.ID)">
+                    <h4 style="color: #2d2d2d;">@ViewBag.NextTitle</h4>
+                </a>
+            </div>
+            <div class="arrow">
+                <a href="@(Model.ID < ViewBag.MaxID ? Model.ID+1 : Model.ID)">
+                    <span class="lnr text-white ti-arrow-right"></span>
+                </a>
+            </div>
+            <div class="thumb">
+                <a href="@(Model.ID < ViewBag.MaxID ? Model.ID+1 : Model.ID)">
+                    <img class="img-fluid" src="@ViewBag.NextPhoto" alt="" style="width:77px; height:auto;">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

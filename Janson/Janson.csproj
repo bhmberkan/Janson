@@ -5805,6 +5805,10 @@
     <Content Include="Views\BlogDetails\Index.cshtml" />
     <Content Include="Views\Blog\TagPartial.cshtml" />
     <Content Include="Views\Blog\CategoryPartial.cshtml" />
+    <Content Include="Views\BlogDetails\NextPostPartial.cshtml" />
+    <Content Include="Views\BlogDetails\CreatorPartial.cshtml" />
+    <Content Include="Views\BlogDetails\BlogCommentsPartial.cshtml" />
+    <Content Include="Views\BlogDetails\CreateBlogComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
