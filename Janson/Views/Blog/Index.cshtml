@@ -38,7 +38,7 @@
                                 </a>
                             </div>
                             <div class="blog_details">
-                                <a class="d-inline-block" href="BlogDetails/@x.ID">
+                                <a class="d-inline-block" href="/BlogDetails/Index/@x.ID" >
                                     <h2 class="blog-head" style="color: #2d2d2d;">@x.Baslik</h2>
                                 </a>
                                 <p>
@@ -108,43 +108,16 @@
                         </form>
                     </aside>
 
-                    <aside class="single_sidebar_widget post_category_widget">
-                        <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
-                        <ul class="list cat-list">
+                    @Html.Action("CategoryPartial")
 
 
+                    @Html.Action("RecendPartial")
 
-                            @foreach (var Category in Model.Select(x => x.Category).Distinct())
-                            {
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>@Category</p> &ensp;
-                                    </a>
-                                </li>
-                            }
+                    @Html.Action("TagPartial")
 
 
-
-
-                        </ul>
-                    </aside>
-                  
-                    @* recent post kısmı yani son postlar kısmı şu anlık duruyor düşüncem *@
-                  @Html.Action("RecendPartial")
-
-                    <aside class="single_sidebar_widget tag_cloud_widget">
-                        <h4 class="widget_title" style="color: #2d2d2d;">Tag Clouds</h4>
-                        <ul class="list">
-                            @foreach (var Tag in Model.Select(x => x.Tag).Distinct())
-                            {
-                                <li>
-                                    <p>@Tag</p> &ensp;
-                                </li>
-                            }
-
-                        </ul>
-                    </aside>
-
+                    @*Blog Detaylarında
+                    Oluşturan kısmı, Yorumlar kısmı Ve yorum ekleme kısmı kaldı.*@
 
 
                 </div>
@@ -153,3 +126,5 @@
     </div>
 </section>
 <!-- Blog Area End -->
+
+@Html.Action("ContactPartial", "Main")

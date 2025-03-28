@@ -169,6 +169,7 @@
     <Compile Include="Controllers\AdminMessageController.cs" />
     <Compile Include="Controllers\AdminSettingsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\BlogDetailsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ProtfolioController.cs" />
@@ -5801,6 +5802,9 @@
     <Content Include="Views\AdminMessage\MessageDetails.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\RecendPartial.cshtml" />
+    <Content Include="Views\BlogDetails\Index.cshtml" />
+    <Content Include="Views\Blog\TagPartial.cshtml" />
+    <Content Include="Views\Blog\CategoryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
