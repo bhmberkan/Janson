@@ -1,0 +1,15 @@
+﻿@model Janson.Models.Entity.BlogTBL
+
+<div class="blog-author">
+    <div class="media align-items-center">
+        <img src="@Model.OlusturanPhoto" alt="" style="width: 83px;  height: 83px;  object-fit: cover;  border-radius: 50%;">
+        <div class="media-body">
+            <a href="#">
+                <h4>@Model.Olusturan</h4>
+            </a>
+            <p>
+                @Model.OlusturanYorum
+            </p>
+        </div>
+    </div>
+</div>
