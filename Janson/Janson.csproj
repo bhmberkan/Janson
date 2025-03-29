@@ -61,6 +61,12 @@
     <Reference Include="MimeKit, Version=4.11.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeKit.4.11.0\lib\net48\MimeKit.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
@@ -162,6 +168,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminAboutController.cs" />
     <Compile Include="Controllers\AdminAboutPController.cs" />
+    <Compile Include="Controllers\AdminBlogController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminExperienceController.cs" />
     <Compile Include="Controllers\AdminGaleryController.cs" />
@@ -5190,6 +5197,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -5205,6 +5213,7 @@
     <Content Include="jnstema\assets\css\main.css" />
     <Content Include="jnstema\assets\css\nice-select.css" />
     <Content Include="jnstema\assets\css\owl.carousel.min.css" />
+    <Content Include="jnstema\assets\css\Paging.css" />
     <Content Include="jnstema\assets\css\price_rangs.css" />
     <Content Include="jnstema\assets\css\progressbar_barfiller.css" />
     <Content Include="jnstema\assets\css\responsive.css" />
@@ -5809,6 +5818,7 @@
     <Content Include="Views\BlogDetails\CreatorPartial.cshtml" />
     <Content Include="Views\BlogDetails\BlogCommentsPartial.cshtml" />
     <Content Include="Views\BlogDetails\CreateBlogComment.cshtml" />
+    <Content Include="Views\AdminBlog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

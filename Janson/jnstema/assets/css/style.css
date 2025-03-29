@@ -4700,9 +4700,10 @@ hr {
 
 /* line 105, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_blog_page.scss */
 .blog_area a {
-  color: "Poppins", sans-serif !important;
-  text-decoration: none;
-  transition: .4s;
+    color: rgb(108, 2, 10);
+    font-family: "Poppins", sans-serif !important;
+    text-decoration: none;
+    transition: .4s;
 }
 
 /* line 109, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_blog_page.scss */

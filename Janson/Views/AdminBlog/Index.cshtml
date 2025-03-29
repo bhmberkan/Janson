@@ -1,0 +1,83 @@
+﻿@using Janson.Models.Entity
+@model List<BlogTBL>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Blog</h2>
+
+
+
+<br />
+<br />
+
+@using (Html.BeginForm("AdminSearch", "Admin", FormMethod.Get))
+{
+    <div class="input-group mb-3">
+        @Html.TextBox("search", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "search..." }) &ensp;
+
+        <button type="submit" class="btn btn-warning">Search</button>
+    </div>
+}
+
+
+
+
+<a href="/Admin/InsertSearch/" class="btn  btn-outline-info">İnsert</a> &ensp; &ensp;
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Baslik</th>
+        <th>İçerik</th>
+        <th>Oluşturan</th>
+        <th>Photo</th>
+        <th>Tarih</th>
+       
+
+
+        <th>Mesajlar</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.Baslik</td>
+            <td>@x.icerik</td>
+            <td>@x.Olusturan</td>
+            <td style="display: flex; justify-content: space-between; align-items: center;">
+              @x.Photo
+                <button class="btn btn-sm btn-outline-primary" onclick="copyToClipboard('@x.Photo')">
+                    <i class="fa fa-copy"></i>
+                </button>
+
+            </td>
+            <td>@x.Tarih</td>
+           
+
+
+
+            <td><a href="/Admin/BlogMesajlar/@x.ID" class="btn mb-1 btn-rounded btn-outline-dark">Detail</a></td>
+            <td><a href="/Admin/UpdateBlogPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-success">Update</a></td>
+            <td><a href="/Admin/DeleteBlog/@x.ID" class="btn mb-1 btn-rounded btn-outline-danger">Delete</a></td>
+
+        </tr>
+     }
+</table>
+
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(function () {
+            alert("Kopyalandı: " + text);
+        }).catch(function (err) {
+            alert("Kopyalama başarısız oldu: " + err);
+        });
+    }
+</script>

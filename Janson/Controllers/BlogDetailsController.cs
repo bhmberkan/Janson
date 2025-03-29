@@ -93,7 +93,7 @@ namespace Janson.Controllers
             {
                 return PartialView(t);
             }
-           
+            t.CreateAt = DateTime.Now.ToString("dd MMM yyyy HH:mm");
             t.BlogID = id;
             db.MesageBlogTBL.Add(t);
             db.SaveChanges();
