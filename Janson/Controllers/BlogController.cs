@@ -1,4 +1,5 @@
 ﻿using Janson.Models.Entity;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Janson.Controllers
     {
         JonsonDbMvcEntities db = new JonsonDbMvcEntities();
         // GET: Blog
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
             /*
             ViewBag.categoryCounts = db.BlogTBL
@@ -24,7 +25,7 @@ namespace Janson.Controllers
 
             //Categorylerin sayısını çekmeyeceğım
 
-            var values = db.BlogTBL.ToList();
+            var values = db.BlogTBL.ToList().ToPagedList(sayfa,3);
             return View(values);
 
         }

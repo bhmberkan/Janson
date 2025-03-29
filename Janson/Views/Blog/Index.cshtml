@@ -1,10 +1,17 @@
 ﻿@using Janson.Models.Entity
-@model List<BlogTBL>
+@model  PagedList.IPagedList<BlogTBL>
+@using PagedList
+@using PagedList.Mvc
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="~/jnstema/assets/css/Paging.css" rel="stylesheet" />
+
+
+@* burda hata var  *@
 
 <!--? Hero Area Start-->
 <div class="hero-area2 d-flex align-items-center">
@@ -27,61 +34,38 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
+                   
                     @foreach (var x in Model)
                     {
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="@x.Photo" alt="">
-                                <a href="#" class="blog_item_date">
+                                <img class="card-img rounded-0" src="@x.Photo" alt=""  >
+                                <a href="/BlogDetails/Index/@x.ID" class="blog_item_date">
 
                                     <p>@x.Tarih</p>
                                 </a>
                             </div>
                             <div class="blog_details">
-                                <a class="d-inline-block" href="/BlogDetails/Index/@x.ID" >
+                                <a class="d-inline-block" href="/BlogDetails/Index/@x.ID">
                                     <h2 class="blog-head" style="color: #2d2d2d;">@x.Baslik</h2>
                                 </a>
                                 <p>
                                     @x.icerik.Substring(0, Math.Min(100, x.icerik.Length))
                                 </p>
                                 <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> @x.Olusturan </a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i>@x.MesageBlogTBL.Count(y => y.BlogID == x.ID) Yorum</a></li>
+                                    <li><a href="/BlogDetails/Index/@x.ID"><i class="fa fa-user"></i> @x.Olusturan </a></li>
+                                    <li><a href="/BlogDetails/Index/@x.ID"><i class="fa fa-comments"></i>@x.MesageBlogTBL.Count(y => y.BlogID == x.ID) Yorum</a></li>
                                 </ul>
                             </div>
                         </article>
                     }
 
 
+                    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+                  
 
-                    @* Paging *@
-                    <nav class="blog-pagination justify-content-center d-flex">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a href="/Blog/Index/2" class="page-link" aria-label="Previous">
-                                    <i class="ti-angle-left"></i>
-                                </a>
-                            </li>
 
-                            <li class="page-item">
-                                <a href="/Blog/Index/1" class="page-link">1</a>
-                            </li>
 
-                            <li class="page-item active">
-                                <a href="/Blog/Index/2" class="page-link">2</a>
-                            </li>
-
-                            <li class="page-item active">
-                                <a href="/Blog/Index/3" class="page-link">3</a>
-                            </li>
-
-                            <li class="page-item">
-                                <a href="/Blog/Index/1" class="page-link" aria-label="Next">
-                                    <i class="ti-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
 
                 </div>
             </div>
@@ -89,6 +73,7 @@
                 <div class="blog_right_sidebar">
 
                     @* search *@
+
                     <aside class="single_sidebar_widget search_widget">
                         <form action="#">
                             <div class="form-group">
@@ -117,7 +102,7 @@
 
 
                     @*Blog Detaylarında
-                    Oluşturan kısmı, Yorumlar kısmı Ve yorum ekleme kısmı kaldı.*@
+                        Oluşturan kısmı, Yorumlar kısmı Ve yorum ekleme kısmı kaldı.*@
 
 
                 </div>
@@ -128,3 +113,6 @@
 <!-- Blog Area End -->
 
 @Html.Action("ContactPartial", "Main")
+
+
+
