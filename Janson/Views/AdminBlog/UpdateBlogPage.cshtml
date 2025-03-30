@@ -1,0 +1,53 @@
+﻿@model Janson.Models.Entity.BlogTBL
+@{
+    ViewBag.Title = "UpdateBlogPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateBlogPage</h2>
+<br />
+
+
+@using (Html.BeginForm("UpdateBlogPages", "AdminBlog", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID) 
+    <br />
+
+    @Html.Label("Baslik")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("icerik")
+    @Html.TextBoxFor(x => x.icerik, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Oluşturan")
+    @Html.TextBoxFor(x => x.Olusturan, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Photo")
+    @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Category")
+    @Html.TextBoxFor(x => x.Category, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Tag")
+    @Html.TextBoxFor(x => x.Tag, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Olusturan Yorum")
+    @Html.TextBoxFor(x => x.OlusturanYorum, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Olusturan Photo")
+    @Html.TextBoxFor(x => x.OlusturanPhoto, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info"> Değişiklikleri Kaydet </button>
+}

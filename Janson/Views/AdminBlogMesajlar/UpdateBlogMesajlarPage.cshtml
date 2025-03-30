@@ -1,0 +1,35 @@
+﻿@model Janson.Models.Entity.MesageBlogTBL
+@{
+    ViewBag.Title = "UpdateBlogMesajlarPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Update Blog Mesajlar Page</h2>
+<br />
+
+@using (Html.BeginForm("UpdateBlogMesajlarPages", "AdminBlogMesajlar", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID)
+    <br />
+
+    @Html.Label("Photo")
+    @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("İsim")
+    @Html.TextBoxFor(x => x.İsim, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Mail")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("İcerik")
+    @Html.TextAreaFor(x => x.icerik, 10, 4, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info"> Değişiklikleri Kaydet </button>
+}

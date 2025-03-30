@@ -1,7 +1,9 @@
 ﻿using Janson.Models.Entity;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
@@ -93,7 +95,7 @@ namespace Janson.Controllers
             {
                 return PartialView(t);
             }
-            t.CreateAt = DateTime.Now.ToString("dd MMM yyyy HH:mm");
+            t.CreateAt = DateTime.Now.ToString("dd MM yyyy HH:mm");
             t.BlogID = id;
             db.MesageBlogTBL.Add(t);
             db.SaveChanges();
