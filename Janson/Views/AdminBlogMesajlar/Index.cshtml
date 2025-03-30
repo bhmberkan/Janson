@@ -1,0 +1,69 @@
+﻿@using Janson.Models.Entity
+@model PagedList.IPagedList<MesageBlogTBL>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+<br />
+
+
+@using (Html.BeginForm("Index", "AdminBlogMesajlar", FormMethod.Get))
+{
+    <div class="input-group mb-3">
+        @Html.TextBox("search", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "search..." }) &ensp;
+
+        <button type="submit" class="btn btn-warning">Search</button>
+    </div>
+}
+
+
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Photo</th>
+        <th>isim</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Mail</th>
+        <th>İçerik</th>
+        <th>Blog Numarası</th>
+
+
+
+        <th>Güncelle</th>
+        <th>Sil</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.Photo</td>
+            <td>@x.İsim</td>
+            <td>@x.CreateAt</td>
+            <td>@x.Mail </td>
+            <td>@x.icerik</td>
+            <td>@x.BlogID</td>
+
+
+
+
+
+            <td><a href="/AdminBlogMesajlar/UpdateBlogMesajlarPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-success">Update</a></td>
+            <td><a href="/AdminBlogMesajlar/DeleteBlogMesajlarPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-danger">Delete</a></td>
+
+        </tr>
+    }
+</table>
+
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+
+<link href="~/jnstema/assets/css/Paging.css" rel="stylesheet" />

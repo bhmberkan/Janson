@@ -169,6 +169,7 @@
     <Compile Include="Controllers\AdminAboutController.cs" />
     <Compile Include="Controllers\AdminAboutPController.cs" />
     <Compile Include="Controllers\AdminBlogController.cs" />
+    <Compile Include="Controllers\AdminBlogMesajlarController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminExperienceController.cs" />
     <Compile Include="Controllers\AdminGaleryController.cs" />
@@ -5819,6 +5820,10 @@
     <Content Include="Views\BlogDetails\BlogCommentsPartial.cshtml" />
     <Content Include="Views\BlogDetails\CreateBlogComment.cshtml" />
     <Content Include="Views\AdminBlog\Index.cshtml" />
+    <Content Include="Views\AdminBlog\InsertBlogPage.cshtml" />
+    <Content Include="Views\AdminBlog\UpdateBlogPage.cshtml" />
+    <Content Include="Views\AdminBlogMesajlar\Index.cshtml" />
+    <Content Include="Views\AdminBlogMesajlar\UpdateBlogMesajlarPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

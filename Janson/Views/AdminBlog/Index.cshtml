@@ -1,6 +1,7 @@
 ﻿@using Janson.Models.Entity
-@model List<BlogTBL>
-
+@model PagedList.IPagedList<BlogTBL>
+@using PagedList
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Index";
@@ -14,7 +15,7 @@
 <br />
 <br />
 
-@using (Html.BeginForm("AdminSearch", "Admin", FormMethod.Get))
+@using (Html.BeginForm("Index", "AdminBlog", FormMethod.Get))
 {
     <div class="input-group mb-3">
         @Html.TextBox("search", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "search..." }) &ensp;
@@ -25,8 +26,10 @@
 
 
 
+<link href="~/jnstema/assets/css/Paging.css" rel="stylesheet" />
 
-<a href="/Admin/InsertSearch/" class="btn  btn-outline-info">İnsert</a> &ensp; &ensp;
+
+<a href="/AdminBlog/InsertBlogPage/" class="btn  btn-outline-info">İnsert</a> &ensp; &ensp;
 
 
 <table class="table table-bordered">
@@ -37,10 +40,10 @@
         <th>Oluşturan</th>
         <th>Photo</th>
         <th>Tarih</th>
-       
 
 
-        <th>Mesajlar</th>
+
+      
         <th>Güncelle</th>
         <th>Sil</th>
 
@@ -53,24 +56,30 @@
             <td>@x.icerik</td>
             <td>@x.Olusturan</td>
             <td style="display: flex; justify-content: space-between; align-items: center;">
-              @x.Photo
+                @x.Photo &ensp;
                 <button class="btn btn-sm btn-outline-primary" onclick="copyToClipboard('@x.Photo')">
                     <i class="fa fa-copy"></i>
                 </button>
 
             </td>
             <td>@x.Tarih</td>
-           
 
 
 
-            <td><a href="/Admin/BlogMesajlar/@x.ID" class="btn mb-1 btn-rounded btn-outline-dark">Detail</a></td>
-            <td><a href="/Admin/UpdateBlogPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-success">Update</a></td>
-            <td><a href="/Admin/DeleteBlog/@x.ID" class="btn mb-1 btn-rounded btn-outline-danger">Delete</a></td>
+
+         
+            <td><a href="/AdminBlog/UpdateBlogPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-success">Update</a></td>
+            <td><a href="/AdminBlog/DeleteBlogPage/@x.ID" class="btn mb-1 btn-rounded btn-outline-danger">Delete</a></td>
 
         </tr>
-     }
+    }
 </table>
+
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+
+
 
 <script>
     function copyToClipboard(text) {

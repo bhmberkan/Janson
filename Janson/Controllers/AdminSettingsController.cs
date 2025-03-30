@@ -33,7 +33,7 @@ namespace Janson.Controllers
             }
             db.AdminTbl.Add(t);
             db.SaveChanges();
-            return RedirectToAction("InsertSettingPage");
+            return RedirectToAction("Index", "AdminSettings");
 
         }
 
@@ -60,9 +60,17 @@ namespace Janson.Controllers
 
         public ActionResult DeleteSettingPage(int id)
         {
-            var prt = db.AdminTbl.Find(id);
-            db.AdminTbl.Remove(prt);
-            db.SaveChanges();
+            var kayıt = db.AdminTbl.Count();
+
+            if (kayıt > 1)
+            {
+                var value = db.AdminTbl.Find(id);
+                db.AdminTbl.Remove(value);
+                db.SaveChanges();
+                return RedirectToAction("Index", "AdminSettings");
+            }
+           
+
             return RedirectToAction("Index", "AdminSettings");
         }
 

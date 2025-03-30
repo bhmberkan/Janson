@@ -1,0 +1,57 @@
+﻿@model Janson.Models.Entity.BlogTBL
+@{
+    ViewBag.Title = "InsertBlogPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Insert Blog Page</h2>
+<br />
+
+
+<form method="post">
+    @Html.Label("Baslik")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("icerik")
+    @Html.TextBoxFor(x => x.icerik, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Oluşturan")
+    @Html.TextBoxFor(x => x.Olusturan, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Photo")
+    @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Category")
+    @Html.TextBoxFor(x => x.Category, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Tag")
+    @Html.TextBoxFor(x => x.Tag, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Olusturan Yorum")
+    @Html.TextBoxFor(x => x.OlusturanYorum, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Olusturan Photo")
+    @Html.TextBoxFor(x => x.OlusturanPhoto, new { @class = "form-control" })
+    <br />
+
+
+
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", type = "date" })
+    <br />
+
+
+
+
+    <button class="btn btn-info"> Ekle </button>
+</form>

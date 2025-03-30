@@ -4,14 +4,15 @@
 
 <aside class="single_sidebar_widget tag_cloud_widget">
     <h4 class="widget_title" style="color: #2d2d2d;">Tag Clouds</h4>
+    <ul class="list">
+        @foreach (var Tag in Model.Select(x => x.Tag).Distinct())
+        {
 
-    @foreach (var Tag in Model.Select(x => x.Tag).Distinct())
-    {
-        <ul class="list">
             <li>
                 <a href="#">@Tag</a>
             </li>
 
-        </ul>
-    }
+
+        }
+    </ul>
     </aside>
