@@ -27,10 +27,6 @@ namespace Janson.Controllers
                         c.Olusturan.Contains(search) ||
                         c.Tarih.Contains(search)
                         );
-                    
-
-                   
-                   
                 }
 
                 query = query.OrderBy(c => c.ID);

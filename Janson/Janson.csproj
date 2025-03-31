@@ -179,6 +179,8 @@
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\BlogDetailsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ProtfolioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -5206,10 +5208,12 @@
     <Content Include="jnstema\assets\css\animate.min.css" />
     <Content Include="jnstema\assets\css\animated-headline.css" />
     <Content Include="jnstema\assets\css\bootstrap.min.css" />
+    <Content Include="jnstema\assets\css\ErorCss.css" />
     <Content Include="jnstema\assets\css\flaticon.css" />
     <Content Include="jnstema\assets\css\fontawesome-all.min.css" />
     <Content Include="jnstema\assets\css\gijgo.css" />
     <Content Include="jnstema\assets\css\hamburgers.min.css" />
+    <Content Include="jnstema\assets\css\Logincss.css" />
     <Content Include="jnstema\assets\css\magnific-popup.css" />
     <Content Include="jnstema\assets\css\main.css" />
     <Content Include="jnstema\assets\css\nice-select.css" />
@@ -5773,7 +5777,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Main\AboutUsPartial.cshtml" />
@@ -5824,6 +5827,8 @@
     <Content Include="Views\AdminBlog\UpdateBlogPage.cshtml" />
     <Content Include="Views\AdminBlogMesajlar\Index.cshtml" />
     <Content Include="Views\AdminBlogMesajlar\UpdateBlogMesajlarPage.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

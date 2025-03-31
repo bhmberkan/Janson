@@ -62,33 +62,31 @@
                 <div class="comments-area">
                     <h4>@Model.MesageBlogTBL.Count(y => y.BlogID == Model.ID) Yorum</h4>
 
-                  @Html.Action("BlogCommentsPartial")
+                    @Html.Action("BlogCommentsPartial")
 
                 </div>
 
                 @* yorum yaptıma kısmı *@
-               @Html.Action("CreateBlogComment")
+                @Html.Action("CreateBlogComment")
             </div>
 
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
 
                     @* Search *@
-                    <aside class="single_sidebar_widget search_widget">
-                        <form action="#">
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Search Keyword'
-                                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
-                                    <div class="input-group-append">
-                                        <button class="btns" type="button"><i class="ti-search"></i></button>
-                                    </div>
+                    <aside class="single_sidebar_widget search_widget" style="background-color:rgb(0, 8, 77) !important" >
+                        <form  >
+                            <div class="form-group" >
+                                <div class="input-group mb-3" >
+                                    <p style="font-family:'MS Outlook'; color:rgb(255, 255, 255)">
+                                        <br />
+                                        Reklam/Sponsor bölümü yapılabilir. <br />
+                                        Search vardı kaldırdım
+                                        <br />
+                                    </p>
                                 </div>
                             </div>
-                            <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                    type="submit">
-                                Search
-                            </button>
+                          
                         </form>
                     </aside>
 
@@ -115,3 +113,5 @@
     </div>
 </section>
 <!-- Blog Area End -->
+
+@Html.Action("ContactPartial", "Main")

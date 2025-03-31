@@ -12,7 +12,7 @@ namespace Janson.Controllers
     {
         JonsonDbMvcEntities db = new JonsonDbMvcEntities();
         // GET: Blog
-        public ActionResult Index(int sayfa = 1)
+        public ActionResult Index(string search,int sayfa = 1)
         {
             /*
             ViewBag.categoryCounts = db.BlogTBL
@@ -24,11 +24,38 @@ namespace Janson.Controllers
                                     }).ToList(); */
 
             //Categorylerin sayısını çekmeyeceğım
+            using (var db = new JonsonDbMvcEntities())
+            {
+                // layz load vardı. ilişkili tabloyu da ekleyince düzdeldi.
+               // var query = db.BlogTBL.Include("MesageBlogTBL").AsQueryable();
 
-            var values = db.BlogTBL.ToList().ToPagedList(sayfa,3);
-            return View(values);
+                var query = db.BlogTBL.Include("MesageBlogTBL").AsNoTracking().AsQueryable();
+
+                if (!string.IsNullOrEmpty(search))
+                {
+                    query = query
+                        .Where(c => c.Baslik.Contains(search) ||
+                        c.icerik.Contains(search) ||
+                        c.Olusturan.Contains(search) ||
+                        c.Tarih.Contains(search)
+                        );
+                }
+
+                query = query.OrderBy(c => c.ID);
+
+                ViewBag.CurrentFilter = search;
+
+                return View(query.ToPagedList(sayfa,3));
+            }
+
+
+
+            //var values = db.BlogTBL.ToList().ToPagedList(sayfa,3);
+            //return View(values);
 
         }
+
+       
 
         public PartialViewResult RecendPartial()
         {
