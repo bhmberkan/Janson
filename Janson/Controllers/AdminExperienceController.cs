@@ -50,6 +50,7 @@ namespace Janson.Controllers
         {
             var value = db.ExperienceTBL.Find(t.ID);
             value.baslik = t.baslik;
+            value.Aralık = t.Aralık;
             value.LinkYolu=t.LinkYolu;
             value.LinkYolu = t.LinkYolu; // örn // http://instagram.com/bhmberkan // mantık bu 
             value.Link=t.Link; // instagram

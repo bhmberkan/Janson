@@ -5757,6 +5757,7 @@
     <Content Include="adminweb\plugins\typeahedjs\dist\nba.json" />
     <Content Include="adminweb\plugins\typeahedjs\dist\nfl.json" />
     <Content Include="adminweb\plugins\typeahedjs\dist\nhl.json" />
+    <Content Include="jnstema\cv\BerkanCv_.pdf" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
