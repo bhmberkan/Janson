@@ -23,6 +23,7 @@ namespace Janson.Controllers
             var values = db.MainTBL.Find(id);
             return View("UpdateMainPage",values);
         }
+
         [HttpPost]
         public ActionResult UpdateMainPages(MainTBL t)
         {
